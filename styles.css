@@ -1,0 +1,134 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styles for the app layout */
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #292b2c; */
+    color: #fff;
+    padding: 20px;
+}
+
+.container {
+    /* max-width: 800px; */
+    margin: 0 auto;
+    background-color: #373a3c;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);;
+    overflow: hidden;
+}
+
+header {
+    background-color: #dce0e4;
+    color: #333232;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* main {
+    padding: 20px;
+} */
+
+.notes {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.note {
+    background-color: #464a4c; /* Darker gray note background */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Darker box shadow */
+    transition: transform 0.3s ease;
+}
+
+.note:hover {
+    transform: translateY(-5px);
+}
+
+.note h2 {
+    margin-top: 0;
+}
+
+.note p {
+    margin-bottom: 0;
+}
+
+/* Form styles */
+#add-note-form {
+    margin-top: 20px;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+#note-title, #note-content {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #50575e; /* Darker input background */
+    color: #fff; /* White text */
+}
+
+#note-content {
+    resize: vertical; /* Allow textarea to be resized vertically */
+    min-height: 100px; /* Minimum height for the textarea */
+}
+
+button {
+    padding: 10px 20px;
+    margin-left: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */;
+    transform: scale(1.05);
+}
+
+/* Media queries */
+@media only screen and (min-width: 600px) {
+    /* Tablet and larger */
+    .notes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #note-title {
+        width: calc(50% - 5px);
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    /* Desktop */
+    .notes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #note-title {
+        width: calc(30% - 7px);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    /* Large desktop */
+    .container {
+        max-width: 1000px;
+    }
+}
